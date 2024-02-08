@@ -22,7 +22,7 @@
     <jakarta.ee.version>10.0.0</jakarta.ee.version>
     <jboss.version>8.0.0.GA-redhat-00009</jboss.version>
     <junit.version>5.10.2</junit.version>
-    <maven.compiler.release>11</maven.compiler.release>
+    <maven.compiler.release>17</maven.compiler.release>
     <maven.ear.version>3.3.0</maven.ear.version>
     <maven.surefire.version>3.2.5</maven.surefire.version>
     <maven.war.version>3.3.0</maven.war.version>

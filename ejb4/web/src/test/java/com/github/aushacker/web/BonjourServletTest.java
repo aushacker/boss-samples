@@ -10,14 +10,14 @@ import jakarta.servlet.http.HttpServletResponse;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-public class HelloServletTest extends AbstractHttpServletTest {
+public class BonjourServletTest extends AbstractHttpServletTest {
 
-    private HelloServlet servlet;
+    private BonjourServlet servlet;
 
     @BeforeEach
     public void setUp() throws IOException {
         super.setUp();
-        servlet = new HelloServlet();
+        servlet = new BonjourServlet();
     }
 
     @Test
@@ -26,6 +26,6 @@ public class HelloServletTest extends AbstractHttpServletTest {
 
         verify(response).setStatus(HttpServletResponse.SC_OK);
         verify(response).setContentType("text/plain");
-        assertEquals("Hello World!\n", getContent(), "content");
+        assertEquals("Bonjour Monde!\n", getContent(), "content");
     }
 }

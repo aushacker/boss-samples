@@ -2,23 +2,24 @@ package com.github.aushacker.web;
 
 import java.io.IOException;
 
+import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
 /**
- * Old school servlet intended to test backward compatability of later
- * EE releases.
+ * Newer style servlet using annotations.
  * 
  * @since 1.0
  */
-public class HelloServlet extends HttpServlet {
+@WebServlet("/bonjour")
+public class BonjourServlet extends HttpServlet {
 
     @Override
     public void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException {
         resp.setStatus(HttpServletResponse.SC_OK);
         resp.setContentType("text/plain");
-        resp.getWriter().println("Hello World!");
+        resp.getWriter().println("Bonjour Monde!");
     }
 
 }
