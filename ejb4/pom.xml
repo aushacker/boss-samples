@@ -1,0 +1,86 @@
+<project
+  xmlns="http://maven.apache.org/POM/4.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>com.github.aushacker.jboss.samples</groupId>
+  <artifactId>ejb4</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>pom</packaging>
+
+  <name>EJB 4 sample application POM</name>
+
+  <modules>
+    <module>web</module>
+    <module>ear</module>
+  </modules>
+
+  <properties>
+    <jacoco.version>0.8.11</jacoco.version>
+    <jakarta.ee.version>10.0.0</jakarta.ee.version>
+    <jboss.version>8.0.0.GA-redhat-00009</jboss.version>
+    <junit.version>5.10.2</junit.version>
+    <maven.compiler.release>11</maven.compiler.release>
+    <maven.ear.version>3.3.0</maven.ear.version>
+    <maven.surefire.version>3.2.5</maven.surefire.version>
+    <maven.war.version>3.3.0</maven.war.version>
+    <mockito.version>5.10.0</mockito.version>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>jakarta.platform</groupId>
+        <artifactId>jakarta.jakartaee-bom</artifactId>
+        <version>${jakarta.ee.version}</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+      <dependency>
+        <groupId>org.jboss.bom</groupId>
+        <artifactId>jboss-eap-ee-with-tools</artifactId>
+        <version>${jboss.version}</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+			<dependency>
+				<groupId>org.junit</groupId>
+				<artifactId>junit-bom</artifactId>
+				<version>${junit.version}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+      <dependency>
+        <groupId>org.mockito</groupId>
+        <artifactId>mockito-core</artifactId>
+        <version>${mockito.version}</version>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
+
+  <build>
+    <pluginManagement>
+      <plugins>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-ear-plugin</artifactId>
+          <version>${maven.ear.version}</version>
+        </plugin>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-surefire-plugin</artifactId>
+          <version>${maven.surefire.version}</version>
+        </plugin>
+        <plugin>
+          <groupId>org.jacoco</groupId>
+          <artifactId>jacoco-maven-plugin</artifactId>
+          <version>${jacoco.version}</version>
+        </plugin>
+      </plugins>
+    </pluginManagement>
+  </build>
+
+</project>
